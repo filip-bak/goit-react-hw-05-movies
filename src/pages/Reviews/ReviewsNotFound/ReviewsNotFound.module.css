@@ -1,0 +1,7 @@
+.text {
+  text-align: center;
+  font-style: italic;
+  padding-block: 30px;
+  padding-inline: 15px;
+  margin: 0;
+}

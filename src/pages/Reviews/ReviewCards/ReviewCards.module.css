@@ -1,0 +1,68 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-block: 15px;
+  margin-inline: auto;
+  padding-inline: 40px;
+  gap: 20px;
+
+  max-width: 1200px;
+}
+.item {
+  position: relative;
+
+  padding-inline: 20px 10px;
+
+  box-shadow: 1px 2px 5px 1px rgb(0 0 0 / 0.5);
+}
+.item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: url('/src/images/svg/person.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.author {
+  margin-block-start: 55px;
+}
+@media screen and (min-width: 320px) {
+  .item::before {
+    left: -5px;
+    transform: translateX(50%);
+  }
+  .author {
+    margin-block: 20px;
+    padding-inline: 40px;
+  }
+}
+.content {
+  padding-inline-end: 10px;
+  padding-block: 1px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 340px;
+
+  white-space: break-spaces;
+
+  scrollbar-width: 8px;
+  scrollbar-color: #888 #f1f1f1;
+}
+.content::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.content::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+.content::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
