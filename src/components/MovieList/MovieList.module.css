@@ -1,0 +1,47 @@
+.list {
+  list-style: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.item:not(:last-child) {
+  margin-bottom: 7px;
+}
+.item::before {
+  --icon-size: 25px;
+
+  content: '';
+
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  flex: 0 0 var(--icon-size);
+
+  background-image: url('/src/images/svg/movie-info.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--icon-size);
+}
+.link {
+  padding-block: 4px;
+  padding-inline: 4px;
+
+  color: #4169e1;
+  font-weight: 500;
+  text-decoration: 1px underline;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.link:visited {
+  color: #808080;
+  text-decoration: 1px underline #808080;
+}
+.link:hover {
+  text-decoration: 2px underline #ce3d3d;
+}
+.link:active {
+  color: inherit;
+}
