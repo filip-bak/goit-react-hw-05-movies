@@ -25,17 +25,17 @@ const useFetch = ({ url, initialParams = {} }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${url}?${allParams}`, { signal });
-        console.log('API: ', response.data);
+        // console.log('API: ', response.data);
         setData(response.data);
         prevQueryRef.current = params?.query;
       } catch (err) {
         if (err.name === 'CanceledError') {
           setIsLoading(true);
-          console.log('Request aborted');
+          // console.log('Request aborted');
         } else {
           setError(err);
-          console.log(err);
           setData(null);
+          // console.log(err);
         }
       } finally {
         setIsLoading(false);
