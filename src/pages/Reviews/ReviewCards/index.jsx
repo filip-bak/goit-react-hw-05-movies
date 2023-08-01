@@ -20,7 +20,7 @@ ReviewCards.propTypes = {
   reviews: PropTypes.shape({
     id: PropTypes.number,
     page: PropTypes.number,
-    results: PropTypes.arrayOf(PropTypes.object),
+    results: PropTypes.arrayOf(PropTypes.object).isRequired,
     total_pages: PropTypes.number,
     total_results: PropTypes.number,
   }),
