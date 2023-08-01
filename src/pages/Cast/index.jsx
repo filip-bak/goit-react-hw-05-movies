@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useFetch from 'hooks/useFetch';
@@ -5,7 +6,6 @@ import useFetch from 'hooks/useFetch';
 import Spinner from 'components/Spinner';
 import CastCards from './CastCards';
 import CastNotFound from './CastNotFound';
-import { useEffect } from 'react';
 import ErrorPage from 'pages/ErrorPage';
 
 const Cast = () => {
@@ -35,8 +35,9 @@ const Cast = () => {
 
   return (
     <div>
-      {isLoading ? <Spinner position="center" /> : null}
-      {isEmpty ? <CastNotFound /> : <CastCards staff={staff} />}
+      <Spinner loading={isLoading} position="center">
+        {isEmpty ? <CastNotFound /> : <CastCards staff={staff} />}
+      </Spinner>
     </div>
   );
 };

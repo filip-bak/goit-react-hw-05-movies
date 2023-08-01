@@ -31,8 +31,8 @@ const Movies = () => {
     updateParams({ query });
   }
 
-  // Reset searchQuery after page refresh
   useEffect(() => {
+    // Reset state after page refresh
     navigate();
   }, [navigate]);
 
@@ -41,11 +41,10 @@ const Movies = () => {
   return (
     <div className="container">
       <SearchBar onSubmit={handleSubmit} storedQuery={query} />
-      {isLoading ? (
-        <Spinner />
-      ) : (
+
+      <Spinner loading={isLoading}>
         <MovieList movies={movies} searchQuery={query} />
-      )}
+      </Spinner>
     </div>
   );
 };

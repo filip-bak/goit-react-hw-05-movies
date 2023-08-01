@@ -35,8 +35,9 @@ const Reviews = () => {
 
   return (
     <div>
-      {isLoading ? <Spinner position="center" /> : null}
-      {isEmpty ? <ReviewsNotFound /> : <ReviewCards reviews={reviews} />}
+      <Spinner loading={isLoading} position="center">
+        {isEmpty ? <ReviewsNotFound /> : <ReviewCards reviews={reviews} />}
+      </Spinner>
     </div>
   );
 };

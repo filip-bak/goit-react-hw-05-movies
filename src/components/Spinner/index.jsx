@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
 import { PulseLoader } from 'react-spinners';
 
-const Spinner = ({ position = 'left' }) => {
+const Spinner = ({
+  position = 'left',
+  color = '#ce3d3d',
+  loading,
+  children,
+}) => {
   return (
-    <PulseLoader
-      color="#ce3d3d"
-      cssOverride={{
-        textAlign: position,
-      }}
-    />
+    <>
+      <PulseLoader
+        color={color}
+        cssOverride={{ textAlign: position }}
+        loading={loading}
+      />
+      {!loading && children}
+    </>
   );
 };
 

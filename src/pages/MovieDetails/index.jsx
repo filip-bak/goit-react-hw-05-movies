@@ -28,8 +28,10 @@ const MovieDetails = () => {
     <div className="container">
       <BackButton query={location.state?.searchQuery} />
 
-      <MovieInfo movie={movie} />
-      <MovieInfoButtons />
+      <Spinner loading={isLoading} position="center">
+        <MovieInfo movie={movie} />
+        <MovieInfoButtons />
+      </Spinner>
 
       <Suspense fallback={<PageLoader />}>
         <Outlet />

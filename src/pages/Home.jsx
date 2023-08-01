@@ -16,8 +16,10 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Trending today</h1>
-      {isLoading && <Spinner />}
-      <MovieList movies={movies} />
+
+      <Spinner loading={isLoading}>
+        <MovieList movies={movies} />
+      </Spinner>
     </div>
   );
 };
