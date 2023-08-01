@@ -8,12 +8,8 @@ const BackButton = ({ query }) => {
   const location = useLocation();
 
   const redirectBack = e => {
-    if (location.state?.prevPage === '/movies') {
+    if (location.state?.prevPage.includes('/movies')) {
       navigate('/movies', { state: { searchQuery: query } });
-      return;
-    }
-    if (location.state?.prevPage === '/') {
-      navigate('/');
       return;
     }
     navigate('/');
